@@ -22,15 +22,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid #45f3ff; /* קו ירוק ניאון/טורקיז זוהר */
-            box-shadow: 0 4px 15px rgba(69, 243, 255, 0.2);
+            border-bottom: 4px solid #39ff14; /* קו ירוק ניאון זוהר */
+            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.2);
         }
 
         header h1 {
             margin: 0;
             font-size: 28px;
-            color: #45f3ff;
-            text-shadow: 0 0 10px rgba(69, 243, 255, 0.6);
+            color: #39ff14;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
             font-weight: 900;
             letter-spacing: 1px;
         }
@@ -75,8 +75,8 @@
         /* אפקט מעבר עכבר מטורף בירוק ניאון */
         .poki-card:hover {
             transform: scale(1.05) rotate(1deg);
-            border-color: #45f3ff;
-            box-shadow: 0 0 20px rgba(69, 243, 255, 0.5);
+            border-color: #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
         }
 
         .poki-card .emoji-icon {
@@ -118,9 +118,9 @@
             max-width: 1024px;
             height: 80%;
             background-color: #0b0c10;
-            border: 4px solid #45f3ff;
+            border: 4px solid #39ff14;
             border-radius: 24px;
-            box-shadow: 0 0 40px rgba(69, 243, 255, 0.6);
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.6);
             overflow: hidden;
             position: relative;
             display: flex;
@@ -138,7 +138,7 @@
 
         .game-header h2 {
             margin: 0;
-            color: #45f3ff;
+            color: #39ff14;
             font-size: 20px;
         }
 
@@ -185,7 +185,7 @@
                 <h3>מים ואש 1</h3>
             </div>
 
-            <!-- ריבוע 2 - גיאומטרי דאש האמיתי -->
+            <!-- ריבוע 2 - גיאומטרי דאש -->
             <div class="poki-card" onclick="openGame('📐 Geometry Dash 📐', 'https://gamedistribution.com')">
                 <div class="emoji-icon">🟩</div>
                 <h3>Geometry Dash</h3>
@@ -197,19 +197,7 @@
                 <h3>מרוץ אופנועים</h3>
             </div>
 
-            <!-- ריבוע 4 - משחק ריצה ומכשולים -->
-            <div class="poki-card" onclick="openGame('🏃‍♂️ משחק ריצה חופשית 🏃‍♂️', 'https://gamedistribution.com')">
-                <div class="emoji-icon">🛹</div>
-                <h3>ריצת מכשולים</h3>
-            </div>
-
-            <!-- ריבוע 5 - קרב יריות -->
-            <div class="poki-card" onclick="openGame('🎯 קלאש יריות אונליין 🎯', 'https://gamedistribution.com')">
-                <div class="emoji-icon">🔫</div>
-                <h3>קרב יריות 3D</h3>
-            </div>
-
-            <!-- ריבוע 6 - כדורגל ראשים -->
+            <!-- ריבוע 4 - כדורגל ראשים -->
             <div class="poki-card" onclick="openGame('⚽ כדורגל ראשים משוגע ⚽', 'https://gamedistribution.com')">
                 <div class="emoji-icon">⚽</div>
                 <h3>כדורגל ראשים</h3>
@@ -223,26 +211,24 @@
         <div class="game-wrapper">
             <div class="game-header">
                 <h2 id="currentGameTitle">שם המשחק</h2>
-                <button class="close-btn" onclick="closeGameWindow()">❌ יציאה לתפריט</button>
+                <button class="close-btn" onclick="closeGameWindow()">❌ חזרה לתפריט</button>
             </div>
             <iframe id="pokiIframe" src="" allow="autoplay; keyboard-attach; fullscreen"></iframe>
         </div>
     </div>
 
-    <!-- הקוד שמפעיל את הלחיצות כמו אתר אמיתי -->
+    <!-- קוד חכם שמפעיל את הלחיצות ומפריד את המשחקים ב-100% -->
     <script>
         function openGame(title, url) {
             document.getElementById('currentGameTitle').innerText = title;
             document.getElementById('pokiIframe').src = url;
             document.getElementById('gameScreenOverlay').style.display = 'flex';
-            // חוסם גלילה של הרקע בזמן שמשחקים
             document.body.style.overflow = 'hidden';
         }
 
         function closeGameWindow() {
             document.getElementById('gameScreenOverlay').style.display = 'none';
             document.getElementById('pokiIframe').src = '';
-            // מחזיר גלילה לתפריט
             document.body.style.overflow = 'auto';
         }
     </script>
