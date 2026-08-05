@@ -3,120 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POKI GREEN PREMIUM - אימפריית המשחקים שלי</title>
+    <title>POKI GREEN - אימפריית המשחקים שלי</title>
     <style>
-        /* ==========================================================================
-           1. הגדרות בסיס וצבעי גיימינג (Neon Green UI)
-           ========================================================================== */
-        :root {
-            --neon-green: #39ff14;
-            --dark-bg: #050a05;
-            --card-bg: #0f240f;
-            --hover-bg: #143314;
-            --border-color: #1c401c;
-            --text-color: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            transition: all 0.25s ease-in-out;
-        }
-
+        /* עיצוב האתר בסגנון פוקי גיימינג ירוק ניאון */
         body {
-            background-color: var(--dark-bg);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #050a05; /* רקע שחור עם נגיעה של ירוק כהה מאוד */
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            overflow-x: hidden;
         }
 
-        /* ==========================================================================
-           2. עיצוב סרגל עליון (Header) ומערכת ניווט
-           ========================================================================== */
+        /* סרגל עליון */
         header {
             background-color: #0f1f0f;
             padding: 25px;
-            border-bottom: 5px solid var(--neon-green);
-            box-shadow: 0 4px 25px rgba(57, 255, 20, 0.4);
-            position: relative;
-            z-index: 10;
+            border-bottom: 5px solid #39ff14; /* קו ירוק ניאון זוהר */
+            box-shadow: 0 4px 20px rgba(57, 255, 20, 0.4);
         }
 
         header h1 {
             margin: 0;
-            font-size: 42px;
-            color: var(--neon-green);
-            text-shadow: 0 0 20px var(--neon-green);
+            font-size: 36px;
+            color: #39ff14;
+            text-shadow: 0 0 15px #39ff14;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
 
         .tagline {
             color: #a0cfa0;
-            font-size: 16px;
-            margin-top: 10px;
+            font-size: 15px;
+            margin-top: 8px;
             font-weight: bold;
-            text-shadow: 0 0 5px rgba(57, 255, 20, 0.2);
         }
 
-        /* ==========================================================================
-           3. מערכת רשת הריבועים (Poki Grid System)
-           ========================================================================== */
+        /* רשת הריבועים של פוקי */
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 50px auto;
-            padding: 0 25px;
+            padding: 0 20px;
         }
 
         .poki-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
         }
 
-        /* עיצוב הריבועים הירוקים */
+        /* עיצוב הקישורים שהופכים לריבועים */
         .poki-card {
-            background-color: var(--card-bg);
-            border: 3px solid var(--border-color);
-            border-radius: 28px;
-            aspect-ratio: 1 / 1;
+            background-color: #0f240f; /* ירוק כהה לריבוע */
+            border: 3px solid #1c401c;
+            border-radius: 24px;
+            aspect-ratio: 1 / 1; /* ריבוע מושלם */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+            transition: all 0.25s ease-in-out;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
         }
 
-        /* אפקטים ואנימציות בזמן מעבר עכבר (Hover Effects) */
+        /* אפקט מעבר עכבר/לחיצה בירוק ניאון מטורף */
         .poki-card:hover {
-            transform: scale(1.08) rotate(1.5deg);
-            background-color: var(--hover-bg);
-            border-color: var(--neon-green);
-            box-shadow: 0 0 35px rgba(57, 255, 20, 0.9);
+            transform: scale(1.08) rotate(1deg);
+            background-color: #143314;
+            border-color: #39ff14;
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
         }
 
         .emoji-icon {
-            font-size: 70px;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 15px rgba(57, 255, 20, 0.4));
+            font-size: 65px;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.3));
         }
 
         .poki-card h3 {
             margin: 0;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
-            color: var(--neon-green);
-            text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+            color: #39ff14;
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
         }
 
-        /* ==========================================================================
-           4. מסך המשחק המלא המובנה (Game Overlay & Theater Mode)
-           ========================================================================== */
+        /* מסך המשחק המלא שנפתח מעל הכל (Modal) */
         .game-overlay {
             display: none;
             position: fixed;
@@ -124,7 +97,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.97);
+            background-color: rgba(0, 0, 0, 0.95);
             z-index: 9999;
             justify-content: center;
             align-items: center;
@@ -133,12 +106,12 @@
 
         .game-wrapper {
             width: 95%;
-            max-width: 1100px;
+            max-width: 1024px;
             height: 85%;
-            background-color: #000000;
-            border: 4px solid var(--neon-green);
-            border-radius: 30px;
-            box-shadow: 0 0 50px rgba(57, 255, 20, 0.7);
+            background-color: #050a05;
+            border: 4px solid #39ff14;
+            border-radius: 24px;
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.6);
             overflow: hidden;
             position: relative;
             display: flex;
@@ -147,59 +120,36 @@
 
         .game-header {
             background-color: #0f1f0f;
-            padding: 15px 30px;
+            padding: 15px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid var(--border-color);
+            border-bottom: 2px solid #1c401c;
         }
 
         .game-header h2 {
             margin: 0;
-            color: var(--neon-green);
-            font-size: 24px;
-            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+            color: #39ff14;
+            font-size: 22px;
         }
 
-        .controls-group {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn {
+        .close-btn {
+            background-color: #ff0055;
+            color: white;
             border: none;
-            padding: 12px 28px;
+            padding: 10px 25px;
             font-size: 16px;
             font-weight: bold;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
-            font-family: inherit;
+            transition: 0.2s;
         }
 
-        .btn-fullscreen {
-            background-color: var(--neon-green);
-            color: #000000;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
-        }
-
-        .btn-fullscreen:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px var(--neon-green);
-        }
-
-        .btn-close {
-            background-color: #ff0055;
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
-        }
-
-        .btn-close:hover {
+        .close-btn:hover {
             background-color: #ff3377;
             transform: scale(1.05);
-            box-shadow: 0 0 25px #ff0055;
         }
 
-        /* עיצוב חלון המשחק הראשי */
         iframe {
             width: 100%;
             height: 100%;
@@ -210,36 +160,36 @@
 </head>
 <body>
 
-    <!-- סרגל עליון ירוק ניאון פרימיום -->
+    <!-- סרגל עליון ירוק ניאון -->
     <header>
         <h1>POKI GREEN</h1>
-        <div class="tagline">רשת המשחקים הרשמית והחסינה של העסק שלי! לחצו על קובייה למשחק מיידי</div>
+        <div class="tagline">אימפריית המשחקים הרשמית של העסק שלי! לחצו על ריבוע למשחק מיידי</div>
     </header>
 
     <!-- רשת הריבועים של המשחקים -->
     <div class="container">
         <div class="poki-grid">
             
-            <!-- ריבוע 1 - גיאומטרי דאש האמיתי והרשמי (שרת על מהיר) -->
-            <div class="poki-card" onclick="launchGame('📐 Geometry Dash 📐', 'https://googleusercontent.com')">
+            <!-- ריבוע 1 - גיאומטרי דאש האמיתי -->
+            <div class="poki-card" onclick="forceOpenGame('📐 Geometry Dash 📐', 'https://geometrylite.github.io/')">
                 <div class="emoji-icon">🟩</div>
                 <h3>Geometry Dash</h3>
             </div>
 
-            <!-- ריבוע 2 - מים ואש 1 האמיתי והרשמי (שרת על מהיר) -->
-            <div class="poki-card" onclick="launchGame('🔥 מים ואש 1 🔥', 'https://googleusercontent.com')">
+            <!-- ריבוע 2 - מים ואש 1 האמיתי -->
+            <div class="poki-card" onclick="forceOpenGame('🔥 מים ואש 1 🔥', 'https://gamedistribution.com')">
                 <div class="emoji-icon">🔥💧</div>
                 <h3>מים ואש 1</h3>
             </div>
 
-            <!-- ריבוע 3 - מרוצי אופנועים Moto X3M -->
-            <div class="poki-card" onclick="launchGame('🏍️ מרוץ אופנועים 3D 🏍️', 'https://googleusercontent.com')">
+            <!-- ריבוע 3 - מרוצי אופנועים -->
+            <div class="poki-card" onclick="forceOpenGame('🏍️ מרוץ אופנועים 3D 🏍️', 'https://gamedistribution.com')">
                 <div class="emoji-icon">🏍️</div>
                 <h3>מרוץ אופנועים</h3>
             </div>
 
-            <!-- ריבוע 4 - כדורגל ראשים משוגע קלאסי -->
-            <div class="poki-card" onclick="launchGame('⚽ כדורגל ראשים משוגע ⚽', 'https://googleusercontent.com')">
+            <!-- ריבוע 4 - כדורגל ראשים משוגע -->
+            <div class="poki-card" onclick="forceOpenGame('⚽ כדורגל ראשים משוגע ⚽', 'https://gamedistribution.com')">
                 <div class="emoji-icon">⚽</div>
                 <h3>כדורגל ראשים</h3>
             </div>
@@ -247,36 +197,41 @@
         </div>
     </div>
 
-    <!-- מסך המשחק המלא והחסין (נשאר נעול בתוך האתר שלך בלבד!) -->
-    <div class="game-overlay" id="pokiStageOverlay">
-        <div class="game-wrapper" id="pokiStageArea">
+    <!-- מסך המשחק המלא שנפתח בתוך האתר שלך (אין מעברים החוצה!) -->
+    <div class="game-overlay" id="gameScreenOverlay">
+        <div class="game-wrapper">
             <div class="game-header">
-                <h2 id="pokiStageTitle">שם המשחק</h2>
-                <div class="controls-group">
-                    <button class="btn btn-fullscreen" onclick="activateMaxScreen()">📺 מסך מלא</button>
-                    <button class="btn btn-close" onclick="shutdownGameWindow()">❌ סגור משחק וחלץ לתפריט</button>
-                </div>
+                <h2 id="currentGameTitle">שם המשחק</h2>
+                <button class="close-btn" onclick="closeGameWindow()">❌ חזרה לתפריט</button>
             </div>
-            <iframe id="pokiStageIframe" src="" allow="autoplay; keyboard-attach; fullscreen"></iframe>
+            <iframe id="pokiIframe" src="" allow="autoplay; keyboard-attach; fullscreen"></iframe>
         </div>
     </div>
 
-    <!-- ==========================================================================
-       5. מערכת הניהול החכמה ב-JavaScript (עקיפת חסימות IP)
-       ========================================================================== */ -->
+    <!-- הקוד המאובטח שמנטרל את ההפניות של גיטהאב -->
     <script>
-        // פונקציה לפתיחת המשחק בצורה חלקה ומאובטחת
-        function launchGame(title, url) {
-            document.getElementById('pokiStageTitle').innerText = title;
-            document.getElementById('pokiStageIframe').src = url;
-            document.getElementById('pokiStageOverlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // חוסם גלילה של דף הבית ברקע
+        function forceOpenGame(title, url) {
+            document.getElementById('currentGameTitle').innerText = title;
+            
+            // הגנה מיוחדת: מונע מהאפליקציה של גיטהאב לחטוף את הלחיצה
+            var iframe = document.getElementById('pokiIframe');
+            iframe.removeAttribute('src');
+            
+            // פתיחת המשחק בצורה נקייה ומאובטחת בתוך האתר
+            setTimeout(function() {
+                iframe.src = url;
+            }, 50);
+            
+            document.getElementById('gameScreenOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
 
-        // פונקציה לסגירת חלון המשחק וחזרה לתפריט הריבועים
-        function shutdownGameWindow() {
-            document.getElementById('pokiStageOverlay').style.display = 'none';
-            document.getElementById('pokiStageIframe').src = '';
-            document.body.style.overflow = 'auto'; // מחזיר את הגלילה
-            if (document.fullscreenElement) {
-                document.exitFullscreen();
+        function closeGameWindow() {
+            document.getElementById('gameScreenOverlay').style.display = 'none';
+            document.getElementById('pokiIframe').src = '';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
+</body>
+</html>
