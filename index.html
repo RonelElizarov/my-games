@@ -7,7 +7,7 @@
     <style>
         /* עיצוב כללי של האתר בסגנון פוקי מקצועי */
         body {
-            background-color: #0d0d0d; /* רקע שחור עמוק */
+            background-color: #0b0c10; /* רקע שחור-גיימינג עמוק */
             color: #ffffff;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -17,26 +17,26 @@
 
         /* סרגל עליון כמו באתרים הגדולים */
         header {
-            background-color: #1a1a1a;
+            background-color: #1f2833;
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid #39ff14; /* קו ירוק ניאון */
-            box-shadow: 0 4px 15px rgba(57, 255, 20, 0.2);
+            border-bottom: 4px solid #45f3ff; /* קו ירוק ניאון/טורקיז זוהר */
+            box-shadow: 0 4px 15px rgba(69, 243, 255, 0.2);
         }
 
         header h1 {
             margin: 0;
             font-size: 28px;
-            color: #39ff14;
-            text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+            color: #45f3ff;
+            text-shadow: 0 0 10px rgba(69, 243, 255, 0.6);
             font-weight: 900;
             letter-spacing: 1px;
         }
 
         .tagline {
-            color: #888;
+            color: #c5c6c7;
             font-size: 14px;
             font-weight: bold;
         }
@@ -57,8 +57,8 @@
 
         /* עיצוב הריבועים של המשחקים */
         .poki-card {
-            background-color: #1f1f1f;
-            border: 3px solid #2d2d2d;
+            background-color: #1f2833;
+            border: 3px solid #0b0c10;
             border-radius: 18px;
             aspect-ratio: 1 / 1; /* ריבוע מושלם כמו פוקי */
             display: flex;
@@ -72,11 +72,11 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.4);
         }
 
-        /* אפקט מעבר עכבר מטורף בירוק */
+        /* אפקט מעבר עכבר מטורף בירוק ניאון */
         .poki-card:hover {
             transform: scale(1.05) rotate(1deg);
-            border-color: #39ff14;
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+            border-color: #45f3ff;
+            box-shadow: 0 0 20px rgba(69, 243, 255, 0.5);
         }
 
         .poki-card .emoji-icon {
@@ -117,10 +117,10 @@
             width: 90%;
             max-width: 1024px;
             height: 80%;
-            background-color: #111;
-            border: 4px solid #39ff14;
+            background-color: #0b0c10;
+            border: 4px solid #45f3ff;
             border-radius: 24px;
-            box-shadow: 0 0 40px rgba(57, 255, 20, 0.6);
+            box-shadow: 0 0 40px rgba(69, 243, 255, 0.6);
             overflow: hidden;
             position: relative;
             display: flex;
@@ -128,17 +128,17 @@
         }
 
         .game-header {
-            background-color: #1a1a1a;
+            background-color: #1f2833;
             padding: 12px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #2d2d2d;
+            border-bottom: 2px solid #0b0c10;
         }
 
         .game-header h2 {
             margin: 0;
-            color: #39ff14;
+            color: #45f3ff;
             font-size: 20px;
         }
 
@@ -179,37 +179,37 @@
     <div class="container">
         <div class="poki-grid">
             
-            <!-- ריבוע 1 -->
+            <!-- ריבוע 1 - מים ואש -->
             <div class="poki-card" onclick="openGame('🔥 מים ואש 1 🔥', 'https://gamedistribution.com')">
                 <div class="emoji-icon">💧🔥</div>
                 <h3>מים ואש 1</h3>
             </div>
 
-            <!-- ריבוע 2 -->
-            <div class="poki-card" onclick="openGame('📐 Geometry Dash Style 📐', 'https://gamedistribution.com')">
+            <!-- ריבוע 2 - גיאומטרי דאש האמיתי -->
+            <div class="poki-card" onclick="openGame('📐 Geometry Dash 📐', 'https://gamedistribution.com')">
                 <div class="emoji-icon">🟩</div>
                 <h3>Geometry Dash</h3>
             </div>
 
-            <!-- ריבוע 3 -->
+            <!-- ריבוע 3 - מרוצי אופנועים -->
             <div class="poki-card" onclick="openGame('🏍️ מרוץ אופנועים 3D 🏍️', 'https://gamedistribution.com')">
                 <div class="emoji-icon">🏍️</div>
                 <h3>מרוץ אופנועים</h3>
             </div>
 
-            <!-- ריבוע 4 -->
+            <!-- ריבוע 4 - משחק ריצה ומכשולים -->
             <div class="poki-card" onclick="openGame('🏃‍♂️ משחק ריצה חופשית 🏃‍♂️', 'https://gamedistribution.com')">
                 <div class="emoji-icon">🛹</div>
                 <h3>ריצת מכשולים</h3>
             </div>
 
-            <!-- ריבוע 5 -->
+            <!-- ריבוע 5 - קרב יריות -->
             <div class="poki-card" onclick="openGame('🎯 קלאש יריות אונליין 🎯', 'https://gamedistribution.com')">
                 <div class="emoji-icon">🔫</div>
                 <h3>קרב יריות 3D</h3>
             </div>
 
-            <!-- ריבוע 6 -->
+            <!-- ריבוע 6 - כדורגל ראשים -->
             <div class="poki-card" onclick="openGame('⚽ כדורגל ראשים משוגע ⚽', 'https://gamedistribution.com')">
                 <div class="emoji-icon">⚽</div>
                 <h3>כדורגל ראשים</h3>
